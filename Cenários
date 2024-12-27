@@ -1,0 +1,17 @@
+Função: Busca e compra de produtos no Advantage Online Shopping
+
+  Cenário: Realizar a busca de um produto
+    Dado que o usuário está na página inicial do Advantage Online Shopping
+    Quando o usuário busca por "nome do produto" na barra de pesquisa
+    Então o sistema deve exibir uma lista de produtos relacionados à busca
+
+  Cenário: Incluir produto no carrinho
+    Dado que o usuário encontrou o produto "nome do produto" na lista de resultados
+    Quando o usuário clica no botão "Adicionar ao Carrinho" do produto
+    Então o sistema deve confirmar que o produto foi adicionado ao carrinho
+
+  Cenário: Validar os produtos incluídos no carrinho na tela de pagamento
+    Dado que o usuário adicionou produtos ao carrinho
+    Quando o usuário navega até a tela de pagamento
+    Então o sistema deve exibir todos os produtos que foram adicionados ao carrinho
+    E o sistema deve mostrar o preço total dos produtos no carrinho
