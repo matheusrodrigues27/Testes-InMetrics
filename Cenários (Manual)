@@ -1,0 +1,76 @@
+ Cenário 1: Realizar a busca de um produto
+
+1. Endpoint: Para buscar um produto, você pode usar a API de busca do site. O endpoint pode variar, mas geralmente é algo como:
+
+   GET https://advantageonlineshopping.com/catalog/api/search
+   
+
+
+2. Parâmetros: Você pode incluir parâmetros de consulta, como o nome do produto que deseja buscar. Por exemplo:
+
+   ?productName=nome_do_produto
+   
+
+
+3. Exemplo de Requisição:
+http
+   GET https://advantageonlineshopping.com/catalog/api/search?productName=nome_do_produto
+   
+
+
+4. Validação: Verifique a resposta para garantir que o produto desejado está na lista de resultados.
+
+### Cenário 2: Incluir produto no carrinho
+
+1. Endpoint: Para adicionar um produto ao carrinho, você pode usar um endpoint como:
+
+   POST https://advantageonlineshopping.com/cart/api/add
+   
+
+
+2. Corpo da Requisição: O corpo da requisição deve incluir os detalhes do produto, como ID do produto e quantidade. Por exemplo:
+json
+   {
+       "productId": "id_do_produto",
+       "quantity": 1
+   }
+   
+
+
+3. Exemplo de Requisição:
+http
+   POST https://advantageonlineshopping.com/cart/api/add
+   Content-Type: application/json
+
+   {
+       "productId": "id_do_produto",
+       "quantity": 1
+   }
+   
+
+
+4. Validação: Verifique a resposta para garantir que o produto foi adicionado com sucesso ao carrinho.
+
+### Cenário 3: Validar os produtos incluídos no carrinho na tela de pagamento
+
+1. Endpoint: Para verificar os produtos no carrinho, você pode usar um endpoint como:
+
+   GET https://advantageonlineshopping.com/cart/api/view
+   
+
+
+2. Exemplo de Requisição:
+http
+   GET https://advantageonlineshopping.com/cart/api/view
+   
+
+
+3. Validação: Na resposta, verifique se os produtos que você adicionou estão listados corretamente e se as quantidades estão corretas.
+
+### Dicas Finais
+
+- Certifique-se de que você está autenticado, se necessário, antes de realizar as operações.
+- Use o Postman para testar cada um dos endpoints e verificar as respostas.
+- Verifique a documentação da API do Advantage Online Shopping para detalhes adicionais sobre os endpoints e parâmetros.
+
+
