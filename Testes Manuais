@@ -1,0 +1,23 @@
+1. Instalação do Postman: Se você ainda não tem o Postman, faça o download e instale-o a partir do site oficial.
+
+2. Criar uma nova requisição:
+- Abra o Postman e clique em "New" para criar uma nova requisição.
+- Selecione o tipo de requisição (GET, POST, PUT, DELETE, etc.) conforme o cenário que você deseja testar.
+
+3. Configurar a URL:
+- Insira a URL da API que você deseja testar no campo apropriado.
+
+4. Adicionar parâmetros e cabeçalhos:
+- Se o seu cenário requer parâmetros de consulta ou cabeçalhos específicos, você pode adicioná-los nas abas "Params" e "Headers".
+
+5. Adicionar corpo da requisição (se necessário):
+- Para requisições como POST ou PUT, você pode precisar adicionar um corpo. Vá para a aba "Body" e escolha o formato adequado (JSON, form-data, etc.) para inserir os dados.
+
+6. Executar a requisição:
+- Clique no botão "Send" para enviar a requisição e aguarde a resposta.
+
+7. Analisar a resposta:
+- Após a execução, você verá a resposta da API na parte inferior. Analise o status, os dados retornados e quaisquer mensagens de erro.
+
+8. Salvar a requisição:
+- Se você deseja reutilizar essa requisição no futuro, não se esqueça de salvá-la em uma coleção.
