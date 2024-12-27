@@ -1,0 +1,59 @@
+javascript
+describe('Busca e compra de produtos no Advantage Online Shopping', () => {
+  
+  beforeEach(() => {
+    // Acessa a página inicial do Advantage Online Shopping
+    cy.visit('https://www.advantageonlineshopping.com');
+  });
+
+  it('Realizar a busca de um produto', () => {
+    // Busca por "nome do produto" na barra de pesquisa
+    cy.get('#searchBar').type('nome do produto');
+    cy.get('#searchButton').click();
+
+    // Verifica se a lista de produtos relacionados é exibida
+    cy.get('.productList').should('be.visible');
+  });
+
+  it('Incluir produto no carrinho', () => {
+    // Busca e encontra o produto
+    cy.get('#searchBar').type('nome do produto');
+    cy.get('#searchButton').click();
+    
+    // Clica no botão "Adicionar ao Carrinho"
+    cy.get('.addToCartButton').first().click();
+
+    // Confirma que o produto foi adicionado ao carrinho
+    cy.get('.cartConfirmation').should('contain', 'Produto adicionado ao carrinho');
+  });
+
+  it('Validar os produtos incluídos no carrinho na tela de pagamento', () => {
+    // Adiciona o produto ao carrinho
+    cy.get('#searchBar').type('nome do produto');
+    cy.get('#searchButton').click();
+    cy.get('.addToCartButton').first().click();
+
+    // Navega até a tela de pagamento
+    cy.get('.cartIcon').click();
+    cy.get('.checkoutButton').click();
+
+    // Verifica se todos os produtos estão exibidos na tela de pagamento
+    cy.get('.cartItems').should('be.visible');
+    cy.get('.cartTotal').should('contain', 'Preço Total:');
+  });
+
+});
+
+
+### Explicação do Código:
+1.
+beforeEach
+: Este bloco é executado antes de cada teste, garantindo que a página inicial seja carregada.
+2. Cenário de Busca: O teste simula a busca de um produto e verifica se a lista de produtos é exibida.
+3. Cenário de Adição ao Carrinho: O teste busca o produto, clica para adicioná-lo ao carrinho e verifica se a confirmação aparece.
+4. Cenário de Validação no Carrinho: O teste adiciona um produto ao carrinho, navega até a tela de pagamento e verifica se os produtos e o preço total estão visíveis.
+
+Certifique-se de ajustar os seletores (como
+#searchBar
+,
+.addToCartButton
